@@ -6,6 +6,6 @@ COPY . /opt/umd-mirador/
 RUN npm install
 RUN npm run build
 
-FROM nginx:1.30.0
+FROM ghcr.io/static-web-server/static-web-server:2-alpine
 
-COPY --from=build /opt/umd-mirador/dist /usr/share/nginx/html/
+COPY --from=build /opt/umd-mirador/dist /var/public/viewer/
