@@ -2,14 +2,14 @@ import Mirador from 'mirador'
 import { miradorImageToolsPlugin } from 'mirador-image-tools'
 import canvasNavigationPlugin from 'mirador-canvasnavigation'
 
-var params = new URLSearchParams(window.location.search)
-var manifestURI = params.get('manifest')
-var index = Number.parseInt(params.get('n'))
-var query = params.get('q')
+const params = new URLSearchParams(window.location.search)
+const manifestURI = params.get('manifest')
+const index = Number.parseInt(params.get('n'))
+const query = params.get('q')
 
 if (manifestURI) {
   document.getElementById('app').innerHTML = '<p>Loading...</p>'
-  var miradorConfig = {
+  const miradorConfig = {
     // id selector where Mirador should be instantiated
     id: 'app',
     window: {
@@ -52,7 +52,7 @@ if (manifestURI) {
       view: 'single',
     }],
   }
-  var miradorInstance = Mirador.viewer(
+  const miradorInstance = Mirador.viewer(
     miradorConfig,
     // plugins
     [
