@@ -1,6 +1,4 @@
 import Mirador from 'mirador'
-import { miradorImageToolsPlugin } from 'mirador-image-tools'
-import canvasNavigationPlugin from 'mirador-canvasnavigation'
 
 const params = new URLSearchParams(window.location.search)
 const manifestURI = params.get('manifest')
@@ -52,12 +50,6 @@ if (manifestURI) {
       view: 'single',
     }],
   }
-  const miradorInstance = Mirador.viewer(
-    miradorConfig,
-    // plugins
-    [
-      miradorImageToolsPlugin,
-      canvasNavigationPlugin,
-    ]
-  );
+  const miradorPlugins = []
+  const miradorInstance = Mirador.viewer(miradorConfig, miradorPlugins)
 }
