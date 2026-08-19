@@ -1,6 +1,6 @@
 {
   "name": "umd-iiif-viewer",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
